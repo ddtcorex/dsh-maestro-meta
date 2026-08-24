@@ -1,6 +1,6 @@
 {
   "name": "@ddtcorex/dsh-maestro-meta",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Maestro Harness meta-bundle: one plugin to install the whole Govard + DSH harness (harness + memory + mobile + skills).",
   "type": "module",
   "license": "MIT",
@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@ddtcorex/dsh-maestro-harness": "^0.2.0",
-    "@ddtcorex/dsh-maestro-memory": "^0.1.0",
+    "@ddtcorex/dsh-maestro-memory": "^1.0.1",
     "@ddtcorex/dsh-maestro-mobile": "^2.1.1",
     "@ddtcorex/maestro-skills": "^2.1.0"
   },
