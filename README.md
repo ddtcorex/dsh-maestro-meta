@@ -29,7 +29,7 @@ dsh plugin --profile web add @ddtcorex/maestro-skills
 For local development (link:):
 
 ```sh
-dsh plugin --profile web add link:/home/kai/Work/htdocs/maestro-harness/dsh-maestro-meta
+dsh plugin --profile web add link:/path/to/maestro-harness/dsh-maestro-meta
 # or link each component individually — same result
 ```
 
@@ -46,7 +46,7 @@ Any row can still be overridden by a higher profile layer (profile's `cordis.pat
 - **Single install** for new machines / CI
 - **One version to pin** in `~/.dsh/profiles/web/package.json`
 - **No code duplication** — this package is patch-only, delegates to the four real bundles
-- Keeps the umbrella workspace at `/home/kai/Work/htdocs/maestro-harness` as the source of truth (see `../../README.md` and `../../docs/architecture.md`)
+- Keeps the umbrella workspace at `/path/to/maestro-harness` as the source of truth (see `../../README.md` and `../../docs/architecture.md`)
 
 ## Versioning
 
