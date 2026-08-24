@@ -1,5 +1,5 @@
 {
-  "name": "@ddtcorex/maestro-harness-meta",
+  "name": "@ddtcorex/dsh-maestro-meta",
   "version": "0.1.0",
   "description": "Maestro Harness meta-bundle: one plugin to install the whole Govard + DSH harness (harness + memory + mobile + skills).",
   "type": "module",

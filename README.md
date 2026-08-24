@@ -1,4 +1,4 @@
-# @ddtcorex/maestro-harness-meta
+# @ddtcorex/dsh-maestro-meta
 
 > **Meta-bundle for Maestro Harness** — one `dsh plugin add` to install the whole stack (Govard + DSH).
 
@@ -17,7 +17,7 @@ Govard itself is a Go binary (not a DSH plugin) and is installed separately — 
 
 ```sh
 # One-liner for the whole DSH side of Maestro Harness
-dsh plugin --profile web add @ddtcorex/maestro-harness-meta
+dsh plugin --profile web add @ddtcorex/dsh-maestro-meta
 
 # Equivalent manual equivalent (what the meta does for you)
 dsh plugin --profile web add @ddtcorex/dsh-maestro-harness
@@ -29,7 +29,7 @@ dsh plugin --profile web add @ddtcorex/maestro-skills
 For local development (link:):
 
 ```sh
-dsh plugin --profile web add link:/home/kai/Work/htdocs/maestro-harness/maestro-harness-meta
+dsh plugin --profile web add link:/home/kai/Work/htdocs/maestro-harness/dsh-maestro-meta
 # or link each component individually — same result
 ```
 

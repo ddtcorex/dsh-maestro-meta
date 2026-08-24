@@ -1,7 +1,7 @@
-# @ddtcorex/maestro-harness-meta bundle patch
+# @ddtcorex/dsh-maestro-meta bundle patch
 # Meta-bundle: one install for the whole Maestro Harness DSH stack.
 # Re-exports the exact rows that each component bundle would insert, so
-# `dsh plugin add @ddtcorex/maestro-harness-meta` is equivalent to adding
+# `dsh plugin add @ddtcorex/dsh-maestro-meta` is equivalent to adding
 # the four components individually. Notes:
 # - dsh-maestro-harness ships 6 rows (webhook + orchestrator + tunnel + telegram + settings-rpc + client)
 # - dsh-maestro-memory / mobile / maestro-skills each ship 1 row

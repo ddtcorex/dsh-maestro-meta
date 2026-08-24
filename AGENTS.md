@@ -1,4 +1,4 @@
-# AGENTS.md — maestro-harness-meta
+# AGENTS.md — dsh-maestro-meta
 
 > `CLAUDE.md` at the repo root is a symlink to `AGENTS.md`. Claude Code follows the same rule set as Codex CLI. Only edit `AGENTS.md` — never edit `CLAUDE.md` directly or replace the symlink with a copy.
 
@@ -8,7 +8,7 @@ Patch-only **meta-bundle** for Maestro Harness. Re-exports the whole DSH side of
 
 - **9 rows total**: 6 from `@ddtcorex/dsh-maestro-harness` (`maestro-gitlab-webhook`, `maestro-orchestrator`, `maestro-tunnel`, `maestro-telegram`, `maestro-settings-rpc`, `maestro-client`) + 1 each from `@ddtcorex/dsh-maestro-memory`, `@ddtcorex/dsh-maestro-mobile`, `@ddtcorex/maestro-skills`.
 - Contains **no runtime code** — only `cordis.patch.yml` + `package.json` + docs. Govard is a Go binary and stays separate (see `../govard`).
-- Installing this bundle is equivalent to adding the four component bundles individually: `dsh plugin --profile web add @ddtcorex/maestro-harness-meta`.
+- Installing this bundle is equivalent to adding the four component bundles individually: `dsh plugin --profile web add @ddtcorex/dsh-maestro-meta`.
 
 Umbrella workspace is `../` (see `../AGENTS.md`, `../README.md`, `../docs/architecture.md`).
 
@@ -25,7 +25,7 @@ Small single-row tweaks (e.g., config default) still require presenting a short 
 ## Repository Layout
 
 ```
-maestro-harness-meta/
+dsh-maestro-meta/
 ├── AGENTS.md            # this file (CLAUDE.md is a symlink)
 ├── CLAUDE.md -> AGENTS.md
 ├── package.json         # dsh.bundle.patch + dependencies on 4 components
@@ -52,7 +52,7 @@ dsh plugin --profile web add link:$(pwd)
 dsh --profile web --dump-config | grep -E 'maestro-'
 
 # To remove
-dsh plugin --profile web remove @ddtcorex/maestro-harness-meta
+dsh plugin --profile web remove @ddtcorex/dsh-maestro-meta
 ```
 
 When a component bumps (e.g., `dsh-maestro-harness@0.3.0`), update the `^x.y.z` range in `package.json` dependencies and the corresponding row in `cordis.patch.yml` if its patch changed, then bump this package's `version`.
