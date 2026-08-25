@@ -6,9 +6,9 @@
 
 Patch-only **meta-bundle** for Maestro Harness. Re-exports the whole DSH side of the harness in one install:
 
-- **9 rows total**: 6 from `@ddtcorex/dsh-maestro-harness` (`maestro-gitlab-webhook`, `maestro-orchestrator`, `maestro-tunnel`, `maestro-telegram`, `maestro-settings-rpc`, `maestro-client`) + 1 each from `@ddtcorex/dsh-maestro-memory`, `@ddtcorex/dsh-maestro-mobile`, `@ddtcorex/maestro-skills`.
-- Contains **no runtime code** — only `cordis.patch.yml` + `package.json` + docs. Govard is a Go binary and stays separate (see `../govard`).
-- Installing this bundle is equivalent to adding the four component bundles individually: `dsh plugin --profile web add @ddtcorex/dsh-maestro-meta`.
+- **6 rows total**, one per granular package: `maestro-remote` (`@ddtcorex/dsh-maestro-remote`), `maestro-review`, `maestro-govard`, `maestro-memory`, `maestro-mobile`, `maestro-notifier` (all `@ddtcorex/dsh-maestro-*`). `@ddtcorex/maestro-skills` is a dependency for its skill provider — it contributes no row.
+- Contains **no runtime code** — only `cordis.patch.yml` + `package.json` + docs. Govard the Go binary stays separate (see `../govard`).
+- Installing this bundle is equivalent to adding the six granular packages individually: `dsh plugin --profile web add @ddtcorex/dsh-maestro-meta`.
 
 Umbrella workspace is `../` (see `../AGENTS.md`, `../README.md`, `../docs/architecture.md`).
 
@@ -28,8 +28,8 @@ Small single-row tweaks (e.g., config default) still require presenting a short 
 dsh-maestro-meta/
 ├── AGENTS.md            # this file (CLAUDE.md is a symlink)
 ├── CLAUDE.md -> AGENTS.md
-├── package.json         # dsh.bundle.patch + dependencies on 4 components
-├── cordis.patch.yml     # 9 insert rows (6 harness + 1 memory + 1 mobile + 1 skills)
+├── package.json         # dsh.bundle.patch + dependencies on 6 granular packages + skills
+├── cordis.patch.yml     # 6 insert rows (remote/review/govard/memory/mobile/notifier)
 ├── README.md            # install & equivalence docs
 └── .gitignore
 ```
@@ -38,14 +38,16 @@ No `src/`, no `lib/`, no build step. This is a **patch-only** bundle (like `@dee
 
 ## Development
 
-No build or test is required for this repo itself (no TypeScript, no Go). Validation is structural:
+No build step. Validation is structural:
 
 ```sh
-# Validate patch is parseable by DSH loader (supports !!js)
-node -e "import('js-yaml').then(m=>m.load(require('fs').readFileSync('cordis.patch.yml','utf8')))"  # expect !!js tag error in plain js-yaml — use DSH loader instead
+# Structural contract test (6 rows count, dependency ranges) from the umbrella root:
+dsh-maestro-harness/node_modules/.bin/vitest run dsh-maestro-meta/tests/meta.test.ts
 
-# Validate the 9 rows match the components' own patches
-diff -u <(grep -E '^\s*- id:' cordis.patch.yml) <(cat ../dsh-maestro-harness/cordis.patch.yml ../dsh-maestro-memory/cordis.patch.yml ../dsh-maestro-mobile/cordis.patch.yml ../maestro-skills/cordis.patch.yml | grep -E '^\s*- id:')
+# Cross-check each meta row resolves to the package whose own patch inserts it:
+#   remote/review/govard/notifier ship one whole-package row; memory/mobile likewise.
+# NOTE: dsh-maestro-review's own patch has 3 internal rows (webhook/orchestrator/settings-rpc)
+# while meta deliberately re-exports a single `maestro-review` alias row — do NOT diff 1:1.
 
 # Dry-run install against the web profile (link: for local dev)
 dsh plugin --profile web add link:$(pwd)
@@ -55,7 +57,7 @@ dsh --profile web --dump-config | grep -E 'maestro-'
 dsh plugin --profile web remove @ddtcorex/dsh-maestro-meta
 ```
 
-When a component bumps (e.g., `dsh-maestro-harness@0.3.0`), update the `^x.y.z` range in `package.json` dependencies and the corresponding row in `cordis.patch.yml` if its patch changed, then bump this package's `version`.
+When a component bumps, update its `^x.y.z` range in `package.json` dependencies and the corresponding row in `cordis.patch.yml` if its patch changed, then bump this package's `version`.
 
 ## Git Workflow
 
@@ -74,5 +76,5 @@ When a component bumps (e.g., `dsh-maestro-harness@0.3.0`), update the `^x.y.z` 
 ## See Also
 
 - Umbrella: `../README.md`, `../AGENTS.md`, `../docs/architecture.md`, `../docs/specs/`, `../maestro-harness.code-workspace`
-- Components: `../dsh-maestro-harness/`, `../dsh-maestro-memory/`, `../dsh-maestro-mobile/`, `../maestro-skills/`, `../govard/`
+- Components: `../packages/dsh-maestro-{remote,review,govard,notifier}/`, `../dsh-maestro-memory/`, `../dsh-maestro-mobile/`, `../maestro-skills/`, `../govard/`
 - DSH bundle docs: `../deepseek-harness/packages/bundle/base/README.md`, `../deepseek-harness/docs/architecture.md` (Profiles and bundles)

@@ -1,44 +1,18 @@
-# @ddtcorex/dsh-maestro-meta bundle patch
-# Meta-bundle: one install for the whole Maestro Harness DSH stack.
-# Re-exports the exact rows that each component bundle would insert, so
-# `dsh plugin add @ddtcorex/dsh-maestro-meta` is equivalent to adding
-# the four components individually. Notes:
-# - dsh-maestro-harness ships 6 rows (webhook + orchestrator + tunnel + telegram + settings-rpc + client)
-# - dsh-maestro-memory / mobile / maestro-skills each ship 1 row
-# - Profile layers on top can still override any row by id (whole-config replace)
-# - Govard is a Go binary, not a DSH plugin — install separately via govard/install.sh
+# @ddtcorex/dsh-maestro-meta bundle patch v2
+# Thin aggregator over granular dsh-maestro-* plugins — `dsh plugin add @ddtcorex/dsh-maestro-meta`
+# is equivalent to adding the six granular plugins individually.
+# IDs use short `maestro-*` aliases for brevity; owned packages use `dsh-maestro-*` — both resolve to the same npm package.
+# Guard (Phase A stub) is opt-in: `dsh plugin add @ddtcorex/dsh-maestro-guard` separately (not in meta one-liner until published).
 - insert:
-    # --- dsh-maestro-harness (6 rows) ---
-    - id: maestro-gitlab-webhook
-      name: '@ddtcorex/dsh-maestro-harness/lib/gitlab-webhook.js'
-      config:
-        port: 3000
-        secret: !!js process.env.MAESTRO_GITLAB_WEBHOOK_SECRET
-        botUsername: maestro-bot
-    - id: maestro-orchestrator
-      name: '@ddtcorex/dsh-maestro-harness/lib/orchestrator.js'
-      config:
-        gitlabBaseUrl: https://gitlab.example.com
-        gitlabToken: !!js process.env.MAESTRO_GITLAB_TOKEN
-        botUsername: maestro-bot
-        projectMappings: []
-    - id: maestro-tunnel
-      name: '@ddtcorex/dsh-maestro-harness/lib/tunnel.js'
-    - id: maestro-telegram
-      name: '@ddtcorex/dsh-maestro-harness/lib/telegram.js'
-    - id: maestro-settings-rpc
-      name: '@ddtcorex/dsh-maestro-harness/lib/settings-rpc.js'
-    - id: maestro-client
-      name: '@ddtcorex/dsh-maestro-harness'
-    # --- dsh-maestro-memory (1 row) ---
+    - id: maestro-remote
+      name: '@ddtcorex/dsh-maestro-remote'
+    - id: maestro-review
+      name: '@ddtcorex/dsh-maestro-review'
+    - id: maestro-govard
+      name: '@ddtcorex/dsh-maestro-govard'
     - id: maestro-memory
       name: '@ddtcorex/dsh-maestro-memory'
-      config:
-        memoryDir: null
-        snapshotOrder: 500
-    # --- dsh-maestro-mobile (1 row) ---
-    - id: dsh-maestro-mobile
+    - id: maestro-mobile
       name: '@ddtcorex/dsh-maestro-mobile'
-    # --- maestro-skills (1 row) ---
-    - id: maestro-skills
-      name: '@ddtcorex/maestro-skills'
+    - id: maestro-notifier
+      name: '@ddtcorex/dsh-maestro-notifier'
