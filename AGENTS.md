@@ -76,5 +76,6 @@ When a component bumps, update its `^x.y.z` range in `package.json` dependencies
 ## See Also
 
 - Umbrella: `../README.md`, `../AGENTS.md`, `../docs/architecture.md`, `../docs/specs/`, `../maestro-harness.code-workspace`
-- Components: `../packages/dsh-maestro-{remote,review,govard,notifier}/`, `../dsh-maestro-memory/`, `../dsh-maestro-mobile/`, `../maestro-skills/`, `../govard/`
+- Components: `../packages/dsh-maestro-{remote,review,govard,memory,mobile,notifier,guard,observe}/`, `../maestro-skills/`, `../govard/`
+  (memory + mobile moved under `packages/` on 2026-08-26; the old workspace-root symlinks are gone and the web profile links `packages/dsh-maestro-{memory,mobile}` directly)
 - DSH bundle docs: `../deepseek-harness/packages/bundle/base/README.md`, `../deepseek-harness/docs/architecture.md` (Profiles and bundles)
