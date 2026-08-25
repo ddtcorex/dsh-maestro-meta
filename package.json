@@ -1,7 +1,7 @@
 {
   "name": "@ddtcorex/dsh-maestro-meta",
-  "version": "0.1.1",
-  "description": "Maestro Harness meta-bundle: one plugin to install the whole Govard + DSH harness (harness + memory + mobile + skills).",
+  "version": "0.2.0",
+  "description": "Maestro Harness meta-bundle: thin v2 aggregator over granular dsh-maestro-* plugins (remote, review, govard, memory, mobile, notifier).",
   "type": "module",
   "license": "MIT",
   "private": false,
@@ -15,10 +15,13 @@
     }
   },
   "dependencies": {
-    "@ddtcorex/dsh-maestro-harness": "^0.2.0",
-    "@ddtcorex/dsh-maestro-memory": "^1.0.1",
-    "@ddtcorex/dsh-maestro-mobile": "^2.1.1",
-    "@ddtcorex/maestro-skills": "^2.1.0"
+    "@ddtcorex/dsh-maestro-remote": "workspace:^0.1.0",
+    "@ddtcorex/dsh-maestro-review": "workspace:^0.1.0",
+    "@ddtcorex/dsh-maestro-govard": "workspace:^0.1.0",
+    "@ddtcorex/dsh-maestro-memory": "workspace:^1.0.1",
+    "@ddtcorex/dsh-maestro-mobile": "workspace:^1.0.0",
+    "@ddtcorex/dsh-maestro-notifier": "workspace:^0.1.0",
+    "@ddtcorex/maestro-skills": "workspace:^2.1.0"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "^4.0.0"
