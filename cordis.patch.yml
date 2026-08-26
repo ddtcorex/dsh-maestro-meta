@@ -16,3 +16,5 @@
       name: '@ddtcorex/dsh-maestro-mobile'
     - id: maestro-notifier
       name: '@ddtcorex/dsh-maestro-notifier'
+    - id: maestro-config
+      name: '@ddtcorex/dsh-maestro-config'

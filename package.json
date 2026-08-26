@@ -21,12 +21,16 @@
     "@ddtcorex/dsh-maestro-memory": "workspace:^1.0.1",
     "@ddtcorex/dsh-maestro-mobile": "workspace:^1.0.0",
     "@ddtcorex/dsh-maestro-notifier": "workspace:^0.1.0",
+    "@ddtcorex/dsh-maestro-config": "workspace:^0.1.0",
     "@ddtcorex/maestro-skills": "workspace:^2.1.0"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "^4.0.0"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "^4.0.0"
+    "vitest": "^3.2.4"
+  },
+  "scripts": {
+    "test": "vitest run"
   }
 }
