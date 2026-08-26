@@ -68,3 +68,28 @@ Bump `version` here when you want to publish a new curated set (new row added or
 The umbrella workspace is local-only, not a published Git repository. From an
 umbrella checkout, consult its `README.md`, `AGENTS.md`, `docs/architecture.md`,
 and `docs/specs/`.
+
+## Installing with plain pnpm
+
+`pnpm add @ddtcorex/dsh-maestro-meta` needs overrides for the DSH internal
+packages that are only published as prereleases under the `next` dist-tag
+(their published ranges are clean `^0.1.x`, which prereleases cannot satisfy).
+Add this `pnpm-workspace.yaml` next to your `package.json`:
+
+```yaml
+packages:
+  - .
+overrides:
+  '@deepseek-ai/dsh-invariants': 0.1.1-rc.2
+  '@deepseek-ai/dsh-typert-registry': 0.1.1-rc.2
+  '@deepseek-ai/dsh-typert-protocol': 0.1.1-rc.2
+  '@deepseek-ai/dsh-scope': 0.1.1-rc.2
+  '@deepseek-ai/dsh-brand': 0.1.1-rc.2
+  '@deepseek-ai/dsh-attachment': 0.1.0-rc.8
+  '@deepseek-ai/dsh-timeout': 0.1.0-rc.8
+```
+
+Installing through the DSH CLI (`dsh plugin add @ddtcorex/dsh-maestro-meta`)
+does not need this — the CLI resolves the pinned set itself. Individual
+granular packages (`@ddtcorex/dsh-maestro-*`) install with plain pnpm without
+overrides; only the full meta bundle hits the shared peer graph.
