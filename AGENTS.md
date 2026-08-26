@@ -69,6 +69,7 @@ When a component bumps, update its `^x.y.z` range in `package.json` dependencies
 ## DSH Rules
 
 - This bundle re-exports rows by **whole-config replace** — profile layers above it can override any row by `id`. There is no deep merge.
+- **Documentation links** — Published docs may use relative paths only for targets in this repository. Cross-repository references must use canonical GitHub URLs; never use `../` or `../../` to escape the repository.
 - Do not duplicate rows in the profile's own `cordis.patch.yml` — duplicate `id` crashes the loader.
 - Prefer editing a component repo over editing this meta's patch, unless you are intentionally curating a new set.
 - Do not kill/restart the `dsh web` process serving a live session to test a patch change — build + verify first, then restart at a user-approved time and check `ss -tlnp` for ports 3000/3080.

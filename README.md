@@ -57,7 +57,7 @@ Any row can still be overridden by a higher profile layer (profile's `cordis.pat
 - **Single install** for new machines / CI
 - **One version to pin** in `~/.dsh/profiles/web/package.json`
 - **No code duplication** — this package is patch-only, delegates to the granular bundles under `packages/`
-- Keeps the umbrella workspace at `/path/to/maestro-harness` as the source of truth (see `../../README.md` and `../../docs/architecture.md`)
+- Keeps the umbrella workspace at `/path/to/maestro-harness` as the source of truth (see the [umbrella README](https://github.com/ddtcorex/maestro-harness) and [architecture](https://github.com/ddtcorex/maestro-harness/blob/master/docs/architecture.md))
 
 ## Versioning
 
