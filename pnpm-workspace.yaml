@@ -1,0 +1,16 @@
+allowBuilds:
+  esbuild: true
+packages:
+  - '../packages/dsh-maestro-remote'
+  - '../packages/dsh-maestro-review'
+  - '../packages/dsh-maestro-govard'
+  - '../packages/dsh-maestro-memory'
+  - '../packages/dsh-maestro-mobile'
+  - '../packages/dsh-maestro-notifier'
+  - '../packages/dsh-maestro-config'
+  - '../packages/dsh-maestro-config-lib'
+  - '../maestro-skills'
+overrides:
+  '@deepseek-ai/dsh-sandbox-policy@>=0.1.1': 0.1.1-rc.2
+  '@deepseek-ai/dsh-sandbox@>=0.1.1': 0.1.1-rc.2
+  '@deepseek-ai/dsh-invariants': 0.1.1-rc.2
