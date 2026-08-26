@@ -43,8 +43,8 @@ No `src/`, no `lib/`, no build step. This is a **patch-only** bundle (like `@dee
 No build step. Validation is structural:
 
 ```sh
-# Structural contract test (6 rows count, dependency ranges) from the umbrella root:
-dsh-maestro-harness/node_modules/.bin/vitest run dsh-maestro-meta/tests/meta.test.ts
+# Structural contract test (6 rows count, dependency ranges) — from this directory:
+pnpm test   # = vitest run (tests/meta.test.ts, 3 tests)
 
 # Cross-check each meta row resolves to the package whose own patch inserts it:
 #   remote/review/govard/notifier ship one whole-package row; memory/mobile likewise.
