@@ -10,7 +10,12 @@ Patch-only **meta-bundle** for Maestro Harness. Re-exports the whole DSH side of
 - Contains **no runtime code** — only `cordis.patch.yml` + `package.json` + docs. Govard the Go binary stays separate (see `<workspace-root>/govard`).
 - Installing this bundle is equivalent to adding the six granular packages individually: `dsh plugin --profile web add @ddtcorex/dsh-maestro-meta`.
 
-The umbrella workspace root is `<workspace-root>` (see `<workspace-root>/AGENTS.md`, `<workspace-root>/README.md`, and `<workspace-root>/docs/architecture.md`).
+**Workspace-root path:** `<workspace-root>` is the absolute path of the current
+Maestro Harness coordination workspace. In this checkout it is
+`/home/kai/Work/htdocs/maestro-harness`; it contains this
+`dsh-maestro-meta/` checkout. Use this token for workspace resources (for
+example `<workspace-root>/AGENTS.md`, `<workspace-root>/README.md`, and
+`<workspace-root>/docs/architecture.md`).
 
 ## Workflow: Superpowers skills are mandatory
 
