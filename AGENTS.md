@@ -7,17 +7,17 @@
 Patch-only **meta-bundle** for Maestro Harness. Re-exports the whole DSH side of the harness in one install:
 
 - **6 rows total**, one per granular package: `maestro-remote` (`@ddtcorex/dsh-maestro-remote`), `maestro-review`, `maestro-govard`, `maestro-memory`, `maestro-mobile`, `maestro-notifier` (all `@ddtcorex/dsh-maestro-*`). `@ddtcorex/maestro-skills` is a dependency for its skill provider — it contributes no row.
-- Contains **no runtime code** — only `cordis.patch.yml` + `package.json` + docs. Govard the Go binary stays separate (see `../govard`).
+- Contains **no runtime code** — only `cordis.patch.yml` + `package.json` + docs. Govard the Go binary stays separate (see `<workspace-root>/govard`).
 - Installing this bundle is equivalent to adding the six granular packages individually: `dsh plugin --profile web add @ddtcorex/dsh-maestro-meta`.
 
-Umbrella workspace is `../` (see `../AGENTS.md`, `../README.md`, `../docs/architecture.md`).
+The umbrella workspace root is `<workspace-root>` (see `<workspace-root>/AGENTS.md`, `<workspace-root>/README.md`, and `<workspace-root>/docs/architecture.md`).
 
 ## Workflow: Superpowers skills are mandatory
 
 Every change to this repository MUST follow the Superpowers skill workflow, in order:
 
-1. **brainstorming** — explore intent/requirements/design before coding. For cross-repo changes, record in `../docs/specs/YYYY-MM-DD-<topic>-design.md`; for meta-only, in local `docs/specs/` if needed.
-2. **writing-plans** — turn the approved spec into a task plan in `../docs/plans/YYYY-MM-DD-<topic>.md` with precise test/implementation sketches.
+1. **brainstorming** — explore intent/requirements/design before coding. For cross-repo changes, record in `<workspace-root>/docs/specs/YYYY-MM-DD-<topic>-design.md`; for meta-only, in local `docs/specs/` if needed.
+2. **writing-plans** — turn the approved spec into a task plan in `<workspace-root>/docs/plans/YYYY-MM-DD-<topic>.md` with precise test/implementation sketches.
 3. **executing-plans** — implement each task with strict TDD (RED → GREEN), one task = one commit, no bundling, no commit while red.
 
 Small single-row tweaks (e.g., config default) still require presenting a short design and getting approval before implementing — see `using-superpowers` skill.
@@ -69,14 +69,14 @@ When a component bumps, update its `^x.y.z` range in `package.json` dependencies
 ## DSH Rules
 
 - This bundle re-exports rows by **whole-config replace** — profile layers above it can override any row by `id`. There is no deep merge.
-- **Documentation links** — Published README docs may use relative Markdown links only for targets in this repository. Use a canonical GitHub URL for a cross-repository reference only when that repository exists. Describe workspace-only resources as plain paths, never as hyperlinks.
+- **Documentation links** — Published README docs may use relative Markdown links only for targets in this repository. Use a canonical GitHub URL for a cross-repository reference only when that repository exists. Describe workspace-only resources as plain `<workspace-root>/...` paths, never as hyperlinks or parent-directory traversal paths.
 - Do not duplicate rows in the profile's own `cordis.patch.yml` — duplicate `id` crashes the loader.
 - Prefer editing a component repo over editing this meta's patch, unless you are intentionally curating a new set.
 - Do not kill/restart the `dsh web` process serving a live session to test a patch change — build + verify first, then restart at a user-approved time and check `ss -tlnp` for ports 3000/3080.
 
 ## See Also
 
-- Umbrella: `../README.md`, `../AGENTS.md`, `../docs/architecture.md`, `../docs/specs/`, `../maestro-harness.code-workspace`
-- Components: `../packages/dsh-maestro-{remote,review,govard,memory,mobile,notifier,guard,observe}/`, `../maestro-skills/`, `../govard/`
+- Umbrella: `<workspace-root>/README.md`, `<workspace-root>/AGENTS.md`, `<workspace-root>/docs/architecture.md`, `<workspace-root>/docs/specs/`, `<workspace-root>/maestro-harness.code-workspace`
+- Components: `<workspace-root>/packages/dsh-maestro-{remote,review,govard,memory,mobile,notifier,guard,observe}/`, `<workspace-root>/maestro-skills/`, `<workspace-root>/govard/`
   (memory + mobile moved under `packages/` on 2026-08-26; the old workspace-root symlinks are gone and the web profile links `packages/dsh-maestro-{memory,mobile}` directly)
-- DSH bundle docs: `../deepseek-harness/packages/bundle/base/README.md`, `../deepseek-harness/docs/architecture.md` (Profiles and bundles)
+- DSH bundle docs: `<workspace-root>/deepseek-harness/packages/bundle/base/README.md`, `<workspace-root>/deepseek-harness/docs/architecture.md` (Profiles and bundles)
