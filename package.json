@@ -5,6 +5,7 @@
   "type": "module",
   "license": "MIT",
   "private": false,
+  "packageManager": "pnpm@11.7.0",
   "files": [
     "cordis.patch.yml",
     "README.md"
