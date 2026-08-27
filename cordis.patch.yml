@@ -18,3 +18,5 @@
       name: '@ddtcorex/dsh-maestro-notifier'
     - id: maestro-config
       name: '@ddtcorex/dsh-maestro-config'
+    - id: maestro-dashboard
+      name: '@ddtcorex/dsh-maestro-dashboard'
