@@ -34,6 +34,7 @@
     "vitest": "^3.2.4"
   },
   "scripts": {
+    "build": "echo \"no build (patch-only bundle)\"",
     "test": "vitest run"
   }
 }
