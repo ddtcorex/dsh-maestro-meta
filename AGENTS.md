@@ -82,3 +82,5 @@ When a component bumps, update its `^x.y.z` range in `package.json` dependencies
 - Components: `<workspace-root>/packages/dsh-maestro-{remote,review,govard,memory,mobile,notifier,guard,observe}/`, `<workspace-root>/maestro-skills/`, `<workspace-root>/govard/`
   (memory + mobile moved under `packages/` on 2026-08-26; the old workspace-root symlinks are gone and the web profile links `packages/dsh-maestro-{memory,mobile}` directly)
 - DSH bundle docs: `<workspace-root>/deepseek-harness/packages/bundle/base/README.md`, `<workspace-root>/deepseek-harness/docs/architecture.md` (Profiles and bundles)
+
+- **Always request approval before merge or release:** never merge a PR/MR or publish a release (`git tag`/`pnpm publish`/`gh release`) without an explicit human approval — request review (`gh pr ready` / `gh pr request-review` / ask in chat) and wait for `APPROVED`.
