@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 describe('dsh-maestro-meta v2', () => {
-  it('cordis.patch.yml contains 7 maestro rows', () => {
+  it('cordis.patch.yml contains 8 maestro rows', () => {
     const yml = readFileSync(join(repoRoot, 'cordis.patch.yml'), 'utf8');
     expect(yml).toContain('maestro-remote');
     expect(yml).toContain('maestro-review');
@@ -16,17 +16,19 @@ describe('dsh-maestro-meta v2', () => {
     expect(yml).toContain('maestro-mobile');
     expect(yml).toContain('maestro-notifier');
     expect(yml).toContain('maestro-config');
+    expect(yml).toContain('maestro-devkit');
     // count ids
     const count = (yml.match(/- id: maestro-/g) || []).length;
-    expect(count).toBe(7);
+    expect(count).toBe(8);
   });
 
-  it('package.json depends on 7 granular packages + skills', () => {
+  it('package.json depends on 8 granular packages + skills', () => {
     // pnpm saves workspace deps with the `workspace:` protocol prefix; accept both spellings.
     const ws = (range: string | undefined, pattern: string) => expect(range).toMatch(new RegExp(`^(workspace:)?${pattern}`));
     const pkg = JSON.parse(readFileSync(join(repoRoot, 'package.json'), 'utf8'));
     ws(pkg.dependencies['@ddtcorex/dsh-maestro-notifier'], '\\^0\\.1\\.0');
     ws(pkg.dependencies['@ddtcorex/dsh-maestro-config'], '\\^0\\.1\\.0');
+    ws(pkg.dependencies['@ddtcorex/dsh-maestro-devkit'], '\\^0\\.1\\.0');
     ws(pkg.dependencies['@ddtcorex/dsh-maestro-remote'], '\\^0\\.1\\.0');
     ws(pkg.dependencies['@ddtcorex/dsh-maestro-review'], '\\^0\\.1\\.0');
     ws(pkg.dependencies['@ddtcorex/dsh-maestro-govard'], '\\^0\\.1\\.0');

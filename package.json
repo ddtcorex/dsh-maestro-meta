@@ -1,7 +1,7 @@
 {
   "name": "@ddtcorex/dsh-maestro-meta",
-  "version": "0.2.0",
-  "description": "Maestro Harness meta-bundle: thin v2 aggregator over granular dsh-maestro-* plugins (remote, review, govard, memory, mobile, notifier).",
+  "version": "0.3.0",
+  "description": "Maestro Harness meta-bundle: thin v2 aggregator over granular dsh-maestro-* plugins (remote, review, govard, memory, mobile, notifier, devkit, dashboard).",
   "type": "module",
   "license": "MIT",
   "private": false,
@@ -16,6 +16,7 @@
     }
   },
   "dependencies": {
+    "@ddtcorex/dsh-maestro-dashboard": "workspace:^0.1.0",
     "@ddtcorex/dsh-maestro-remote": "workspace:^0.1.0",
     "@ddtcorex/dsh-maestro-review": "workspace:^0.1.0",
     "@ddtcorex/dsh-maestro-govard": "workspace:^0.1.0",
@@ -23,8 +24,8 @@
     "@ddtcorex/dsh-maestro-mobile": "workspace:^1.0.0",
     "@ddtcorex/dsh-maestro-notifier": "workspace:^0.1.0",
     "@ddtcorex/dsh-maestro-config": "workspace:^0.1.0",
-    "@ddtcorex/maestro-skills": "workspace:^2.2.0",
-    "@ddtcorex/dsh-maestro-dashboard": "workspace:^0.1.0"
+    "@ddtcorex/dsh-maestro-devkit": "workspace:^0.1.0",
+    "@ddtcorex/maestro-skills": "workspace:^2.2.0"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "^4.0.0"

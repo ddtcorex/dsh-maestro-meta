@@ -6,9 +6,9 @@
 
 Patch-only **meta-bundle** for Maestro Harness. Re-exports the whole DSH side of the harness in one install:
 
-- **6 rows total**, one per granular package: `maestro-remote` (`@ddtcorex/dsh-maestro-remote`), `maestro-review`, `maestro-govard`, `maestro-memory`, `maestro-mobile`, `maestro-notifier` (all `@ddtcorex/dsh-maestro-*`). `@ddtcorex/maestro-skills` is a dependency for its skill provider — it contributes no row.
+- **9 rows total**, one per granular package: `maestro-remote` (`@ddtcorex/dsh-maestro-remote`), `maestro-review`, `maestro-govard`, `maestro-memory`, `maestro-mobile`, `maestro-notifier`, `maestro-config`, `maestro-devkit`, `dsh-maestro-dashboard` (all `@ddtcorex/dsh-maestro-*`). `@ddtcorex/maestro-skills` is a dependency for its skill provider — it contributes no row.
 - Contains **no runtime code** — only `cordis.patch.yml` + `package.json` + docs. Govard the Go binary stays separate (see `<workspace-root>/govard`).
-- Installing this bundle is equivalent to adding the six granular packages individually: `dsh plugin --profile web add @ddtcorex/dsh-maestro-meta`.
+- Installing this bundle is equivalent to adding the nine granular packages individually: `dsh plugin --profile web add @ddtcorex/dsh-maestro-meta`.
 
 The umbrella workspace root is `<workspace-root>` (see
 `<workspace-root>/AGENTS.md`, `<workspace-root>/README.md`, and
@@ -30,8 +30,8 @@ Small single-row tweaks (e.g., config default) still require presenting a short 
 dsh-maestro-meta/
 ├── AGENTS.md            # this file (CLAUDE.md is a symlink)
 ├── CLAUDE.md -> AGENTS.md
-├── package.json         # dsh.bundle.patch + dependencies on 6 granular packages + skills
-├── cordis.patch.yml     # 6 insert rows (remote/review/govard/memory/mobile/notifier)
+├── package.json         # dsh.bundle.patch + dependencies on 9 granular packages + skills
+├── cordis.patch.yml     # 9 insert rows (remote/review/govard/memory/mobile/notifier/config/devkit/dashboard)
 ├── README.md            # install & equivalence docs
 └── .gitignore
 ```
@@ -43,7 +43,7 @@ No `src/`, no `lib/`, no build step. This is a **patch-only** bundle (like `@dee
 No build step. Validation is structural:
 
 ```sh
-# Structural contract test (6 rows count, dependency ranges) — from this directory:
+# Structural contract test (9 rows count, dependency ranges) — from this directory:
 pnpm test   # = vitest run (tests/meta.test.ts, 3 tests)
 
 # Cross-check each meta row resolves to the package whose own patch inserts it:
