@@ -28,4 +28,5 @@ jobs:
         dsh-maestro-mobile master packages/dsh-maestro-mobile
         dsh-maestro-notifier master packages/dsh-maestro-notifier
         dsh-maestro-config master packages/dsh-maestro-config
+        dsh-maestro-dashboard master packages/dsh-maestro-dashboard
         maestro-skills master maestro-skills
