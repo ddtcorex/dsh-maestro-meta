@@ -28,13 +28,13 @@ describe('dsh-maestro-meta v2', () => {
     const pkg = JSON.parse(readFileSync(join(repoRoot, 'package.json'), 'utf8'));
     ws(pkg.dependencies['@ddtcorex/dsh-maestro-notifier'], '\\^0\\.1\\.0');
     ws(pkg.dependencies['@ddtcorex/dsh-maestro-config'], '\\^0\\.2\\.0');
-    ws(pkg.dependencies['@ddtcorex/dsh-maestro-devkit'], '\\^0\\.1\\.0');
+    ws(pkg.dependencies['@ddtcorex/dsh-maestro-devkit'], '\\^0\\.3\\.0');
     ws(pkg.dependencies['@ddtcorex/dsh-maestro-remote'], '\\^0\\.1\\.0');
-    ws(pkg.dependencies['@ddtcorex/dsh-maestro-review'], '\\^0\\.1\\.0');
+    ws(pkg.dependencies['@ddtcorex/dsh-maestro-review'], '\\^0\\.1\\.2');
     ws(pkg.dependencies['@ddtcorex/dsh-maestro-govard'], '\\^0\\.1\\.0');
-    ws(pkg.dependencies['@ddtcorex/dsh-maestro-memory'], '\\^1\\.');
-    ws(pkg.dependencies['@ddtcorex/dsh-maestro-mobile'], '\\^1\\.');
-    expect(pkg.dependencies['@ddtcorex/maestro-skills']).toBeDefined();
+    ws(pkg.dependencies['@ddtcorex/dsh-maestro-memory'], '\\^1\\.2\\.0');
+    ws(pkg.dependencies['@ddtcorex/dsh-maestro-mobile'], '\\^1\\.2\\.0');
+    ws(pkg.dependencies['@ddtcorex/maestro-skills'], '\\^2\\.7\\.0');
   });
 
   it('does not contain old harness monolith rows', () => {
