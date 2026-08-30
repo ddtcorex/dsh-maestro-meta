@@ -20,16 +20,16 @@ importers:
         specifier: workspace:^0.1.0
         version: link:../packages/dsh-maestro-dashboard
       '@ddtcorex/dsh-maestro-devkit':
-        specifier: workspace:^0.1.0
+        specifier: workspace:^0.3.0
         version: link:../packages/dsh-maestro-devkit
       '@ddtcorex/dsh-maestro-govard':
         specifier: workspace:^0.1.0
         version: link:../packages/dsh-maestro-govard
       '@ddtcorex/dsh-maestro-memory':
-        specifier: workspace:^1.0.1
+        specifier: workspace:^1.2.0
         version: link:../packages/dsh-maestro-memory
       '@ddtcorex/dsh-maestro-mobile':
-        specifier: workspace:^1.0.0
+        specifier: workspace:^1.2.0
         version: link:../packages/dsh-maestro-mobile
       '@ddtcorex/dsh-maestro-notifier':
         specifier: workspace:^0.1.0
@@ -38,10 +38,10 @@ importers:
         specifier: workspace:^0.1.0
         version: link:../packages/dsh-maestro-remote
       '@ddtcorex/dsh-maestro-review':
-        specifier: workspace:^0.1.0
+        specifier: workspace:^0.1.2
         version: link:../packages/dsh-maestro-review
       '@ddtcorex/maestro-skills':
-        specifier: workspace:^2.2.0
+        specifier: workspace:^2.7.0
         version: link:../maestro-skills
       '@deepseek-ai/cordis':
         specifier: ^4.0.0
