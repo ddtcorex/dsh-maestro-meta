@@ -27,7 +27,7 @@ describe('dsh-maestro-meta v2', () => {
     const ws = (range: string | undefined, pattern: string) => expect(range).toMatch(new RegExp(`^(workspace:)?${pattern}`));
     const pkg = JSON.parse(readFileSync(join(repoRoot, 'package.json'), 'utf8'));
     ws(pkg.dependencies['@ddtcorex/dsh-maestro-notifier'], '\\^0\\.1\\.1');
-    ws(pkg.dependencies['@ddtcorex/dsh-maestro-config'], '\\^0\\.2\\.1');
+    ws(pkg.dependencies['@ddtcorex/dsh-maestro-config'], '\\^0\\.3\\.0');
     ws(pkg.dependencies['@ddtcorex/dsh-maestro-devkit'], '\\^0\\.3\\.0');
     ws(pkg.dependencies['@ddtcorex/dsh-maestro-remote'], '\\^0\\.1\\.0');
     ws(pkg.dependencies['@ddtcorex/dsh-maestro-review'], '\\^0\\.1\\.2');
