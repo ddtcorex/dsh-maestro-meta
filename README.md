@@ -13,6 +13,7 @@ This package contains **no runtime code**. Its `cordis.patch.yml` is a thin v2 a
 | 5 | **maestro-mobile** | `@ddtcorex/dsh-maestro-mobile` | Mobile drawer/sheets for DSH Web (<1024px) |
 | 6 | **maestro-notifier** | `@ddtcorex/dsh-maestro-notifier` | Provider-neutral notification service (`maestroNotifier`, Telegram first) |
 | 7 | **maestro-config** | `@ddtcorex/dsh-maestro-config` | Shared settings store (`~/.dsh/maestro/settings.json`) + Settings card |
+| 8 | **dsh-maestro-dashboard** | `@ddtcorex/dsh-maestro-dashboard` | Dev dashboard surface for the Maestro harness |
 
 `@ddtcorex/maestro-skills` is also a dependency — it serves skills through its own provider and needs no row here.
 
@@ -32,6 +33,7 @@ dsh plugin --profile web add @ddtcorex/dsh-maestro-memory
 dsh plugin --profile web add @ddtcorex/dsh-maestro-mobile
 dsh plugin --profile web add @ddtcorex/dsh-maestro-notifier
 dsh plugin --profile web add @ddtcorex/dsh-maestro-config
+dsh plugin --profile web add @ddtcorex/dsh-maestro-dashboard
 ```
 
 `@ddtcorex/dsh-maestro-guard` is intentionally **opt-in** (approval gate; not part of this bundle until published).
