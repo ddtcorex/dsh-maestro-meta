@@ -1,6 +1,6 @@
 # @ddtcorex/dsh-maestro-meta bundle patch v2
 # Thin aggregator over granular dsh-maestro-* plugins — `dsh plugin add @ddtcorex/dsh-maestro-meta`
-# is equivalent to adding the seven granular plugins individually.
+# is equivalent to adding the eight granular plugins individually.
 # IDs use short `maestro-*` aliases for brevity; owned packages use `dsh-maestro-*` — both resolve to the same npm package.
 # Guard (Phase A stub) is opt-in: `dsh plugin add @ddtcorex/dsh-maestro-guard` separately (not in meta one-liner until published).
 - insert:
@@ -18,7 +18,5 @@
       name: '@ddtcorex/dsh-maestro-notifier'
     - id: maestro-config
       name: '@ddtcorex/dsh-maestro-config'
-    - id: maestro-devkit
-      name: '@ddtcorex/dsh-maestro-devkit'
     - id: dsh-maestro-dashboard
       name: '@ddtcorex/dsh-maestro-dashboard'

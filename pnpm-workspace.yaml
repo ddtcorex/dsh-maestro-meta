@@ -8,7 +8,6 @@ packages:
   - '../packages/dsh-maestro-mobile'
   - '../packages/dsh-maestro-notifier'
   - '../packages/dsh-maestro-config'
-  - '../packages/dsh-maestro-devkit'
   - '../packages/dsh-maestro-dashboard'
   - '../packages/dsh-maestro-sync'
   - '../packages/dsh-maestro-config-lib'

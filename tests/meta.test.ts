@@ -7,28 +7,34 @@ import { fileURLToPath } from 'node:url';
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 describe('dsh-maestro-meta v2', () => {
-  it('cordis.patch.yml contains 8 maestro rows', () => {
+  it('cordis.patch.yml contains seven maestro rows plus dashboard and no DevKit', () => {
     const yml = readFileSync(join(repoRoot, 'cordis.patch.yml'), 'utf8');
-    expect(yml).toContain('maestro-remote');
-    expect(yml).toContain('maestro-review');
-    expect(yml).toContain('maestro-govard');
-    expect(yml).toContain('maestro-memory');
-    expect(yml).toContain('maestro-mobile');
-    expect(yml).toContain('maestro-notifier');
-    expect(yml).toContain('maestro-config');
-    expect(yml).toContain('maestro-devkit');
-    // count ids
-    const count = (yml.match(/- id: maestro-/g) || []).length;
-    expect(count).toBe(8);
+    for (const id of [
+      'maestro-remote',
+      'maestro-review',
+      'maestro-govard',
+      'maestro-memory',
+      'maestro-mobile',
+      'maestro-notifier',
+      'maestro-config',
+      'dsh-maestro-dashboard',
+    ]) {
+      expect(yml).toContain(`- id: ${id}`);
+    }
+    expect(yml).not.toContain('maestro-devkit');
+    expect((yml.match(/^\s+- id:/gm) || [])).toHaveLength(8);
+    expect((yml.match(/- id: maestro-/g) || [])).toHaveLength(7);
   });
 
-  it('package.json depends on 8 granular packages + skills', () => {
+  it('package.json depends on seven granular rows, dashboard, and skills without DevKit', () => {
     // pnpm saves workspace deps with the `workspace:` protocol prefix; accept both spellings.
-    const ws = (range: string | undefined, pattern: string) => expect(range).toMatch(new RegExp(`^(workspace:)?${pattern}`));
+    const ws = (range: string | undefined, pattern: string) =>
+      expect(range).toMatch(new RegExp(`^(workspace:)?${pattern}`));
     const pkg = JSON.parse(readFileSync(join(repoRoot, 'package.json'), 'utf8'));
+    expect(pkg.dependencies['@ddtcorex/dsh-maestro-devkit']).toBeUndefined();
+    ws(pkg.dependencies['@ddtcorex/dsh-maestro-dashboard'], '\\^0\\.1\\.0');
     ws(pkg.dependencies['@ddtcorex/dsh-maestro-notifier'], '\\^0\\.1\\.1');
     ws(pkg.dependencies['@ddtcorex/dsh-maestro-config'], '\\^0\\.2\\.1');
-    ws(pkg.dependencies['@ddtcorex/dsh-maestro-devkit'], '\\^0\\.3\\.0');
     ws(pkg.dependencies['@ddtcorex/dsh-maestro-remote'], '\\^0\\.1\\.0');
     ws(pkg.dependencies['@ddtcorex/dsh-maestro-review'], '\\^0\\.1\\.2');
     ws(pkg.dependencies['@ddtcorex/dsh-maestro-govard'], '\\^0\\.1\\.0');
