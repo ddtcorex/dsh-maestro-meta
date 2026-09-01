@@ -25,7 +25,6 @@
     "@ddtcorex/dsh-maestro-notifier": "workspace:^0.1.1",
     "@ddtcorex/dsh-maestro-config": "workspace:^0.2.1",
     "@ddtcorex/dsh-maestro-devkit": "workspace:^0.3.0",
-    "@ddtcorex/dsh-maestro-sync": "workspace:^0.1.0",
     "@ddtcorex/maestro-skills": "workspace:^2.7.0"
   },
   "peerDependencies": {
