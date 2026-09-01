@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 describe('dsh-maestro-meta v2', () => {
-  it('cordis.patch.yml contains seven maestro rows plus dashboard and no DevKit', () => {
+  it('cordis.patch.yml contains seven maestro rows plus dashboard and no retired dev toolkit', () => {
     const yml = readFileSync(join(repoRoot, 'cordis.patch.yml'), 'utf8');
     for (const id of [
       'maestro-remote',
@@ -26,7 +26,7 @@ describe('dsh-maestro-meta v2', () => {
     expect((yml.match(/- id: maestro-/g) || [])).toHaveLength(7);
   });
 
-  it('package.json depends on seven granular rows, dashboard, and skills without DevKit', () => {
+  it('package.json depends on seven granular rows, dashboard, and skills without the retired dev toolkit', () => {
     // pnpm saves workspace deps with the `workspace:` protocol prefix; accept both spellings.
     const ws = (range: string | undefined, pattern: string) =>
       expect(range).toMatch(new RegExp(`^(workspace:)?${pattern}`));
