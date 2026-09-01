@@ -21,7 +21,7 @@
     "@ddtcorex/dsh-maestro-review": "workspace:^0.1.2",
     "@ddtcorex/dsh-maestro-govard": "workspace:^0.1.0",
     "@ddtcorex/dsh-maestro-memory": "workspace:^1.2.0",
-    "@ddtcorex/dsh-maestro-mobile": "workspace:^1.2.0",
+    "@ddtcorex/dsh-maestro-mobile": "workspace:^1.3.0",
     "@ddtcorex/dsh-maestro-notifier": "workspace:^0.1.1",
     "@ddtcorex/dsh-maestro-config": "workspace:^0.2.1",
     "@ddtcorex/maestro-skills": "workspace:^2.7.0"

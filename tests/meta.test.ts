@@ -39,7 +39,7 @@ describe('dsh-maestro-meta v2', () => {
     ws(pkg.dependencies['@ddtcorex/dsh-maestro-review'], '\\^0\\.1\\.2');
     ws(pkg.dependencies['@ddtcorex/dsh-maestro-govard'], '\\^0\\.1\\.0');
     ws(pkg.dependencies['@ddtcorex/dsh-maestro-memory'], '\\^1\\.2\\.0');
-    ws(pkg.dependencies['@ddtcorex/dsh-maestro-mobile'], '\\^1\\.2\\.0');
+    ws(pkg.dependencies['@ddtcorex/dsh-maestro-mobile'], '\\^1\\.3\\.0');
     ws(pkg.dependencies['@ddtcorex/maestro-skills'], '\\^2\\.7\\.0');
   });
 
