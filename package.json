@@ -16,9 +16,9 @@
     }
   },
   "dependencies": {
-    "@ddtcorex/dsh-maestro-dashboard": "workspace:^0.1.0",
+    "@ddtcorex/dsh-maestro-dashboard": "workspace:^0.2.0",
     "@ddtcorex/dsh-maestro-remote": "workspace:^0.2.0",
-    "@ddtcorex/dsh-maestro-review": "workspace:^0.1.2",
+    "@ddtcorex/dsh-maestro-review": "workspace:^0.2.0",
     "@ddtcorex/dsh-maestro-govard": "workspace:^0.1.0",
     "@ddtcorex/dsh-maestro-memory": "workspace:^1.2.0",
     "@ddtcorex/dsh-maestro-mobile": "workspace:^1.2.0",
