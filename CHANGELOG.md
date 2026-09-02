@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.5.1] - 2026-09-02
+
+### Changed
+
+- Re-range `dsh-maestro-remote` to `^0.2.0` (local LAN PIN gate on :3080 — feature bump).
+
 All notable changes to this project are documented in this file. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); this project uses
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).

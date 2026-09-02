@@ -32,7 +32,7 @@ importers:
         specifier: workspace:^0.1.1
         version: link:../packages/dsh-maestro-notifier
       '@ddtcorex/dsh-maestro-remote':
-        specifier: workspace:^0.1.0
+        specifier: workspace:^0.2.0
         version: link:../packages/dsh-maestro-remote
       '@ddtcorex/dsh-maestro-review':
         specifier: workspace:^0.1.2
