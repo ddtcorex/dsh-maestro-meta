@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.6.0] - 2026-09-02
+
+### Changed
+
+- **Dependency ranges** — bump workspace ranges for dashboard ^0.3.0, remote ^0.2.1, review ^0.3.0, govard ^0.1.1, config ^0.3.0, memory ^1.2.4, mobile ^1.3.1 to match companion releases.
+- Compare dependency ranges against sibling checkouts (#28).
+
+
 ## [0.5.1] - 2026-09-02
 
 ### Changed

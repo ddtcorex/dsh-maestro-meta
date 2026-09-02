@@ -1,6 +1,6 @@
 {
   "name": "@ddtcorex/dsh-maestro-meta",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "Maestro Harness meta-bundle: thin v2 aggregator over eight granular dsh-maestro-* runtime rows (remote, review, govard, memory, mobile, notifier, config, dashboard).",
   "type": "module",
   "license": "MIT",
@@ -16,14 +16,14 @@
     }
   },
   "dependencies": {
-    "@ddtcorex/dsh-maestro-dashboard": "workspace:^0.2.0",
-    "@ddtcorex/dsh-maestro-remote": "workspace:^0.2.0",
-    "@ddtcorex/dsh-maestro-review": "workspace:^0.2.0",
-    "@ddtcorex/dsh-maestro-govard": "workspace:^0.1.0",
-    "@ddtcorex/dsh-maestro-memory": "workspace:^1.2.0",
-    "@ddtcorex/dsh-maestro-mobile": "workspace:^1.2.0",
+    "@ddtcorex/dsh-maestro-dashboard": "workspace:^0.3.0",
+    "@ddtcorex/dsh-maestro-remote": "workspace:^0.2.1",
+    "@ddtcorex/dsh-maestro-review": "workspace:^0.3.0",
+    "@ddtcorex/dsh-maestro-govard": "workspace:^0.1.1",
+    "@ddtcorex/dsh-maestro-memory": "workspace:^1.2.4",
+    "@ddtcorex/dsh-maestro-mobile": "workspace:^1.3.1",
     "@ddtcorex/dsh-maestro-notifier": "workspace:^0.1.1",
-    "@ddtcorex/dsh-maestro-config": "workspace:^0.2.1",
+    "@ddtcorex/dsh-maestro-config": "workspace:^0.3.0",
     "@ddtcorex/maestro-skills": "workspace:^2.7.0"
   },
   "peerDependencies": {
