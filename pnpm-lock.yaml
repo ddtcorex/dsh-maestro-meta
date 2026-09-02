@@ -14,28 +14,28 @@ importers:
   .:
     dependencies:
       '@ddtcorex/dsh-maestro-config':
-        specifier: workspace:^0.2.1
+        specifier: workspace:^0.3.0
         version: link:../packages/dsh-maestro-config
       '@ddtcorex/dsh-maestro-dashboard':
-        specifier: workspace:^0.2.0
+        specifier: workspace:^0.3.0
         version: link:../packages/dsh-maestro-dashboard
       '@ddtcorex/dsh-maestro-govard':
-        specifier: workspace:^0.1.0
+        specifier: workspace:^0.1.1
         version: link:../packages/dsh-maestro-govard
       '@ddtcorex/dsh-maestro-memory':
-        specifier: workspace:^1.2.0
+        specifier: workspace:^1.2.4
         version: link:../packages/dsh-maestro-memory
       '@ddtcorex/dsh-maestro-mobile':
-        specifier: workspace:^1.2.0
+        specifier: workspace:^1.3.1
         version: link:../packages/dsh-maestro-mobile
       '@ddtcorex/dsh-maestro-notifier':
         specifier: workspace:^0.1.1
         version: link:../packages/dsh-maestro-notifier
       '@ddtcorex/dsh-maestro-remote':
-        specifier: workspace:^0.2.0
+        specifier: workspace:^0.2.1
         version: link:../packages/dsh-maestro-remote
       '@ddtcorex/dsh-maestro-review':
-        specifier: workspace:^0.2.0
+        specifier: workspace:^0.3.0
         version: link:../packages/dsh-maestro-review
       '@ddtcorex/maestro-skills':
         specifier: workspace:^2.7.0
