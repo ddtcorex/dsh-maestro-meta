@@ -35,7 +35,7 @@ importers:
         specifier: workspace:^0.2.1
         version: link:../packages/dsh-maestro-remote
       '@ddtcorex/dsh-maestro-review':
-        specifier: workspace:^0.3.0
+        specifier: workspace:^0.4.0
         version: link:../packages/dsh-maestro-review
       '@ddtcorex/maestro-skills':
         specifier: workspace:^2.7.0
