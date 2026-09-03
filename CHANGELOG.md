@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.1] - 2026-09-04
+
+### Changed
+
+- **Dependency ranges** — bump review `workspace:^0.3.0` to `^0.4.0` to
+  match the companion release.
+
 ## [0.6.0] - 2026-09-02
 
 ### Changed
