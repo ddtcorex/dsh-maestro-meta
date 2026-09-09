@@ -1,2 +1,6 @@
 node_modules/
 lib/
+
+# Re-include coordination files ignored by the global core.excludesFile
+!AGENTS.md
+!CLAUDE.md
