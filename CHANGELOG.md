@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.3] - 2026-09-11
+
+### Changed
+
+- **Dependency ranges** — align every component with its released sibling: govard `^0.1.1` → `^0.2.0`, maestro-skills `^2.7.0` → `^2.12.0`, mobile `^1.3.1` → `^1.3.4`, memory `^1.2.4` → `^1.2.5`, remote `^0.2.1` → `^0.2.2` (#34).
+- govard's previous range did not resolve 0.2.0, so a fresh meta install would have shipped the plugin without the container-free audit wiring.
+
 ## [0.6.1] - 2026-09-04
 
 ### Changed
