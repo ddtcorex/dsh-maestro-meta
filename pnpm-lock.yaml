@@ -20,7 +20,7 @@ importers:
         specifier: workspace:^0.3.0
         version: link:../packages/dsh-maestro-dashboard
       '@ddtcorex/dsh-maestro-govard':
-        specifier: workspace:^0.2.0
+        specifier: workspace:^0.3.0
         version: link:../packages/dsh-maestro-govard
       '@ddtcorex/dsh-maestro-memory':
         specifier: workspace:^1.2.5
@@ -38,7 +38,7 @@ importers:
         specifier: workspace:^0.7.0
         version: link:../packages/dsh-maestro-review
       '@ddtcorex/maestro-skills':
-        specifier: workspace:^2.12.0
+        specifier: workspace:^2.13.0
         version: link:../maestro-skills
       '@deepseek-ai/cordis':
         specifier: ^4.0.0
