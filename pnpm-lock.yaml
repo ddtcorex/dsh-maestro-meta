@@ -14,7 +14,7 @@ importers:
   .:
     dependencies:
       '@ddtcorex/dsh-maestro-config':
-        specifier: workspace:^0.4.0
+        specifier: workspace:^0.5.0
         version: link:../packages/dsh-maestro-config
       '@ddtcorex/dsh-maestro-dashboard':
         specifier: workspace:^0.3.0
@@ -32,10 +32,10 @@ importers:
         specifier: workspace:^0.1.1
         version: link:../packages/dsh-maestro-notifier
       '@ddtcorex/dsh-maestro-remote':
-        specifier: workspace:^0.2.2
+        specifier: workspace:^0.3.0
         version: link:../packages/dsh-maestro-remote
       '@ddtcorex/dsh-maestro-review':
-        specifier: workspace:^0.6.2
+        specifier: workspace:^0.7.0
         version: link:../packages/dsh-maestro-review
       '@ddtcorex/maestro-skills':
         specifier: workspace:^2.12.0
