@@ -44,7 +44,7 @@ No build step. Validation is structural:
 
 ```sh
 # Structural contract test (8 rows count, dependency ranges) — from this directory:
-pnpm test   # = vitest run (tests/meta.test.ts, 3 tests)
+pnpm test   # = vitest run
 
 # Cross-check each meta row resolves to the package whose own patch inserts it:
 #   remote/review/govard/notifier ship one whole-package row; memory/mobile likewise.
