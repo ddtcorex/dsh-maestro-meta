@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.6.5] - 2026-09-14
+
+### Changed
+
+- Component ranges follow the releases they point at:
+  `@ddtcorex/dsh-maestro-govard` `^0.3.0` (deploy plan and check tools) and
+  `@ddtcorex/maestro-skills` `^2.13.0` (deployment sections).
+
 ## [0.6.4] - 2026-09-13
 
 ### Changed
