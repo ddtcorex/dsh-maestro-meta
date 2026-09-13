@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.4] - 2026-09-13
+
+### Changed
+
+- Dependency ranges follow the released components: `dsh-maestro-remote`
+  `^0.3.0`, `dsh-maestro-review` `^0.7.0`, `dsh-maestro-config` `^0.5.0`.
+
 ## [0.6.3] - 2026-09-11
 
 ### Changed
