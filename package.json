@@ -2,6 +2,13 @@
   "name": "@ddtcorex/dsh-maestro-meta",
   "version": "0.6.5",
   "description": "Maestro Harness meta-bundle: thin v2 aggregator over eight granular dsh-maestro-* runtime rows (remote, review, govard, memory, mobile, notifier, config, dashboard).",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddtcorex/dsh-maestro-meta.git"
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
   "type": "module",
   "license": "MIT",
   "private": false,
