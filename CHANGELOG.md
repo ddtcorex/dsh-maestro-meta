@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.7.0] - 2026-09-22
+
+### Changed
+
+- Component ranges follow the releases they point at:
+  `@ddtcorex/dsh-maestro-dashboard` `^0.4.1`, `-remote` `^0.4.0`,
+  `-review` `^0.8.0`, `-memory` `^2.2.0`, `-mobile` `^1.5.0`,
+  `-notifier` `^0.1.2`, `-config` `^0.6.0` and `@ddtcorex/maestro-skills`
+  `^2.15.0`. `-govard` stays `^0.3.0` (no release in this batch).
+
 ## [0.6.5] - 2026-09-14
 
 ### Changed
