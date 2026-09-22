@@ -15,7 +15,7 @@ packages:
 overrides:
   '@deepseek-ai/dsh-sandbox-policy@>=0.1.1': 0.1.1-rc.2
   '@deepseek-ai/dsh-sandbox@>=0.1.1': 0.1.1-rc.2
-  '@deepseek-ai/dsh-invariants': 0.1.1-rc.2
+  '@deepseek-ai/dsh-invariants': 0.1.7-alpha.2
 # Day-zero DSH prereleases: minimumReleaseAgeExclude keeps only the FIRST
 # entry per package name, so an appended version stays gated while the stale
 # entry shadows it — the age gate stays off.

@@ -34,7 +34,7 @@
     "@ddtcorex/maestro-skills": "workspace:^2.15.0"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "^4.0.0"
+    "@deepseek-ai/cordis": "~4.0.4"
   },
   "devDependencies": {
     "vitest": "^3.2.4"
