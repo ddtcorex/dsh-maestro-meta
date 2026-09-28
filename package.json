@@ -25,13 +25,13 @@
   "dependencies": {
     "@ddtcorex/dsh-maestro-dashboard": "workspace:^0.4.1",
     "@ddtcorex/dsh-maestro-remote": "workspace:^0.4.0",
-    "@ddtcorex/dsh-maestro-review": "workspace:^0.8.0",
+    "@ddtcorex/dsh-maestro-review": "workspace:^0.9.0",
     "@ddtcorex/dsh-maestro-govard": "workspace:^0.3.0",
     "@ddtcorex/dsh-maestro-memory": "workspace:^2.2.0",
-    "@ddtcorex/dsh-maestro-mobile": "workspace:^1.5.0",
+    "@ddtcorex/dsh-maestro-mobile": "workspace:^1.6.2",
     "@ddtcorex/dsh-maestro-notifier": "workspace:^0.1.2",
     "@ddtcorex/dsh-maestro-config": "workspace:^0.6.0",
-    "@ddtcorex/maestro-skills": "workspace:^2.15.0"
+    "@ddtcorex/maestro-skills": "workspace:^2.16.0"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "~4.0.4"
